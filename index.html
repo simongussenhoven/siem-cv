@@ -247,10 +247,7 @@
       event.preventDefault();
 
       const myForm = event.target;
-      console.log(myForm)
       const formData = new FormData(myForm);
-      console.log(formData)
-      return
       
       fetch("/", {
         method: "POST",
