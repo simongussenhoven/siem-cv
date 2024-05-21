@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Firmbee.com - Free Project Management Platform for remote teams"> 
-    <title>Simon Gussenhoven</title>
+    <title>Simon Gussenhoven - Frontend developer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Open+Sans&display=swap" rel="stylesheet">
@@ -25,7 +25,7 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mx-auto">
               <li class="nav-card-item">
-                <a class="nav-link  active" href="#about">About me</a>
+                <a class="nav-link  active" href="#about" class="smooth">About me</a>
               </li>
               <li class="nav-card-item">
                 <a class="nav-link" href="#bio">My bio</a>
@@ -94,7 +94,10 @@
               <h6 class="section-title">My bio</h6>
               <h1><span class="green">Biography,<br></span> a few words</h1>
               <p>
-                Hey there, I'm Simon, a software engineer hailing from the beautiful city of Hilversum. I'm all about TypeScript and Vue.js, constantly exploring new horizons to create innovative solutions to complex problems. When I'm not coding, you'll likely find me out on the water, sailing on my boat, or spending quality time with friends. I'm also passionate about staying fit, whether it's through kickboxing or finding my zen in yoga. Come along with me on this adventure where technology meets the great outdoors, and every challenge is just another opportunity to innovate.
+                Hey there, I'm Simon, a software engineer hailing from the beautiful city of Hilversum. I'm all about TypeScript and Vue.js, constantly exploring new horizons to create innovative solutions to complex problems.
+              </p>
+              <p>
+                When I'm not coding, you'll likely find me out on the water, sailing on my boat, or spending quality time with friends. I'm also passionate about staying fit, whether it's through kickboxing or finding my zen in yoga. Come along with me on this adventure where technology meets the great outdoors, and every challenge is just another opportunity to innovate.
               </p>
             </div>
         </div>
@@ -187,15 +190,15 @@
               <form id="contact-form" action="" method="post">
                 <div class="form-group">
                   <label for="name">Name</label>
-                  <input type="text" class="form-control" id="name" placeholder="">
+                  <input type="text" class="form-control" id="name" name="name" placeholder="">
                 </div>
                 <div class="form-group">
                   <label for="email">Email</label>
-                  <input type="email" class="form-control" id="email" placeholder="">
+                  <input type="email" class="form-control" id="email" name="email" placeholder="">
                 </div>
                 <div class="form-group">
                   <label for="email">Message</label>
-                  <textarea class="form-control" id="Message" placeholder=""></textarea>
+                  <textarea class="form-control" id="Message" name="Message" placeholder=""></textarea>
                 </div>
                 <button type="submit" class="btn btn-success py-2 px-">Send message</button>
               </form>
@@ -244,7 +247,10 @@
       event.preventDefault();
 
       const myForm = event.target;
+      console.log(myForm)
       const formData = new FormData(myForm);
+      console.log(formData)
+      return
       
       fetch("/", {
         method: "POST",
@@ -256,7 +262,7 @@
     };
 
     document
-      .querySelector("#contact-form")
+      .querySelector("form")
       .addEventListener("submit", handleSubmit);
     </script>
 </body>
