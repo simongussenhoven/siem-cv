@@ -554,6 +554,10 @@ footer .copyright p a:hover {
     width: 20px;
   }
 }
+.credits {
+  color: black;
+}
+
 @media (min-width: 992px) {
   h1 {
     font-size: 4rem;
